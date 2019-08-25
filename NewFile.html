@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>reg form</title>
+<script type="text/javascript">
+function validateEmail(){
+	emailPattern=/^[a-zA-Z]{1}[a-zA-Z0-9]{5,15}@{1}[a-z]{5,8}[.]{1}com$/
+	emailStr=document.getElementById("email").value;
+	emailObj=document.getElementById("invalid_email");
+	if(!emailPattern.test(emailStr))
+	{
+		emailObj.innerHTML="Invalid Email";
+	}
+}
+function validateName(){
+	namePattern=/^[A-Z][a-zA-Z ]{5,20}$/
+	nameStr=document.getElementById("name").value;
+	nameObj=document.getElementById("invalid_name");
+	if(!namePattern.test(nameStr))
+	{
+	    nameObj.innerHTML="Invalid Name";	
+	}
+}
+function validatePassword(){
+	
+	    passPattern=/^(?=.*[A-Z].*[A-Z])(?=.*[$@].*[$@])([a-z0-9A-Z$@#]).{6,20}$/
+		passStr=document.getElementById("pass").value;
+		passObj=document.getElementById("invalid_pass");
+		if(!passPattern.test(passStr))
+		{
+		    passObj.innerHTML="Invalid Password";	
+		}
+}
+
+function validateAge(){ 
+	    
+		var dob=document.getElementById("date").value;
+		var dobObj=document.getElementById("age") 
+		var date=new Date();
+		var x=parseInt(date.getFullYear());
+		var y=dob.split("-");
+		var z=parseInt(y[0]);
+		if((x-z)<18)
+			{
+			  dobObj.innerHTML="Your age should be greater than 18"
+			}
+}
+
+function terms()
+{
+	var txt;
+	if(confirm("Acceptance of terms and conditions"))
+		{
+		 alert("You have registered successfully");
+
+		}
+	else
+		{
+		alert("Failure of registration");
+		}
+}
+		
+	    
+</script>
+</head>
+<body>
+<h1 style="color:red;">Registration Form:</h1>
+<hr>
+<br>
+<br>
+<form action="" onsubmit="terms()">
+<label>Name:<input style="margin-left:90px" type="text" name="name" onblur="validateName()" id="name" required></label>
+<span style="color:black;">*</span>
+<b style="color:black;" id="invalid_name"></b>
+<br>
+<br>
+<label>Email id:<input style="margin-left:72px" type="email" name="mail" onblur="validateEmail()" id="email" required></label>
+<span style="color:green;">*</span>
+<b style="color:green;" id="invalid_email"></b>
+<br>
+<br>
+<label>Date of birth:<input style="margin-left:45px" type="date" name="date_of_birth" onblur="validateAge()" id="date" required></label>
+<span style="color:red;">*</span>
+<b style="color:tomato;" id="age"></b>
+<br>
+<br>
+<label>Mobile Number:<input style="margin-left:25px" type="text" name="number"></label>
+<br>
+<br>
+<input type="reset" value="Reset">
+<br>
+<br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

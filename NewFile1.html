@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+ <html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>three paragraphs</title>
+        <style type="text/css">
+            #layer1
+                {
+                    border:solid thick black;
+                    background-color:DodgerBlue;
+                    position:absolute;
+                    top:160px;
+                    left:80px;
+                    z-index:0;
+                }
+            #layer2
+                {
+                    border:solid red;
+                    background-color:orange;
+                    position:absolute;
+                    top:180px;
+                    left:100px;
+                    z-index:0;
+                }
+            #layer3
+                {
+                    border:solid orange;
+                    background-color:red;
+                    position:absolute;
+                    top:200px;
+                    left:120px;
+                    z-index:0;
+                }
+        </style>
+</head>
+    <body>
+    <h1 style="color:orange;">Paragraphs</h1>
+        <script type=text/javascript>
+            var topLayer="layer3";
+            function mover(toTop)
+                {
+                    document.getElementById(topLayer).style.zIndex="0";
+                    document.getElementById(toTop).style.zIndex="1";
+                    topLayer=toTop;
+                }
+        </script>
+        <pre id=layer1 onMouseOver=mover('layer1');>
+        <b>Google</b>
+        Googleis an American multinational technology company that
+        specializes in Internet-related services and products,which
+        include online advertising technologies, search engine,
+        cloud computing,software, and hardware.
+        
+        </pre>
+        <pre id=layer2 onMouseOver=mover('layer2');>
+        <b>Microsoft Corporation</b>
+        Microsoft Corporation is an American multinational 
+        technology company with headquarters in Redmond, Washington.
+        It develops,manufactures, licenses, sells computer
+        software, consumer electronics,personal computers, 
+        and related services. 
+        </pre>
+        <pre id=layer3 onMouseOver=mover('layer3');>
+        <b>Oracle Corporation</b>
+       Oracle Corporation is an American multinational computer 
+       technology corporation headquartered in Redwood Shores, 
+       California. The company sells database software and technology,
+       cloud engineered systems, and enterprise software products
+       particularly its own brands of database management systems.
+        </pre>
+    </body>
+ </html>
