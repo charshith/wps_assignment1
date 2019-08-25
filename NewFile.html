@@ -22,16 +22,6 @@ function validateName(){
 	    nameObj.innerHTML="Invalid Name";	
 	}
 }
-function validatePassword(){
-	
-	    passPattern=/^(?=.*[A-Z].*[A-Z])(?=.*[$@].*[$@])([a-z0-9A-Z$@#]).{6,20}$/
-		passStr=document.getElementById("pass").value;
-		passObj=document.getElementById("invalid_pass");
-		if(!passPattern.test(passStr))
-		{
-		    passObj.innerHTML="Invalid Password";	
-		}
-}
 
 function validateAge(){ 
 	    
